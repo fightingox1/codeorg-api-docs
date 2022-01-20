@@ -1,33 +1,35 @@
-$project
+codeorg-api
 ========
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
-
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
+codeorg-api is an API made specifically for use in code.org's applab, in order to connect two (or more) clients to one another through a server, 
+if you are interested in making any multiplayer or online functionality in applab you've come to the right place! With this documentation you can learn how to get codeorg-api working in your applab project in no time!
 
 Features
 --------
 
-- Be awesome
-- Make things faster
+- Pre Specified unique user id's
+- Sending and recieving x and y coordinates
+- setting a username for the pre specified user id
+- resetting all values for refreshing server
+- getting and setting player ready
 
-Installation
-------------
+Player Settings
+---------------
 
-Install $project by running:
+The first thing you need to do is get your user_id, you can do this using get-user which will return either P1, P2, or higher depending on the server size, which
+is pre-set in the server's code, in order to get the server-size changed temporarily for your project contact support. If there are no users available get-user
+will then return FULL.
 
-    install project
+URL:
+```https://codeorg-server.fightingox1.repl.co/server/get-user```
 
-Contribute
-----------
-
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+Example:
+```
+  startWebRequest("https://codeorg-server.fightingox1.repl.co/server/get-user", function(content) {
+    user = content;
+    console.log("completed " + content);
+  });
+```
 
 Support
 -------
