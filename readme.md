@@ -17,9 +17,9 @@ Player Settings
 ---------------
 <details><summary>get-user</summary>
   
-#### get-user
+# get-user
   
-# takes 0 params, returns 1 JSON
+### takes 0 params, returns 1 JSON
   
 <p>
   
