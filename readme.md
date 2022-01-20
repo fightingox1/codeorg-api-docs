@@ -29,11 +29,11 @@ is pre-set in the server's code, in order to get the server-size changed tempora
 will then return FULL.
 
 URL:
-```https://codeorg-server.fightingox1.repl.co/server/get-user```
+```https://codeorg-api.com/server/get-user```
 
 Example:
 ```
-  startWebRequest("https://codeorg-server.fightingox1.repl.co/server/get-user", function(content) {
+  startWebRequest("https://codeorg-api.com/server/get-user", function(content) {
     user = content;
     console.log("completed " + content);
   });
@@ -55,13 +55,13 @@ and some people may set-username in their code with no input from the user, depe
 will output "set username"
 
 URL:
-```https://codeorg-server.fightingox1.repl.co/server/set-username{PLAYER}[USERNAME]```
+```https://codeorg-api.com/server/set-username{PLAYER}[USERNAME]```
 in the url player would be the user assigned from get-user, for example P1. USERNAME would be the username that is being set, for example what a user would
 input in the display-name box.
 
 Example:
 ```
-  startWebRequest("https://codeorg-server.fightingox1.repl.co/server/set-username{"+user+"}["+getText("username_input")+"]", function(content) {
+  startWebRequest("https://codeorg-api.com/server/set-username{"+user+"}["+getText("username_input")+"]", function(content) {
     console.log("completed " + content);
   });
 ```
@@ -69,11 +69,133 @@ in this example username_input would be the text input of wherever your client i
 </p>
 </details>
 
+<details><summary>get-username</summary>
+  
+# get-username
+  
+### takes 1 params, returns 1 JSON
+  
+<p>
+  
+get-username is the command used for getting the username of a user ID, currently the server is only set up for two players and when get-username is run
+the user from get-user is given as input, and then get-username returns the opposite users username. For example if you were given P1 and you called get-username
+you would get P2's username, and if you were given P2 and called get-username you would be given P1's username. If your program requires multiple users
+then contact support and we may be able to temporarily change the server properties to fit your needs.
+
+URL:
+```https://codeorg-api.com/server/set-username{"+user+"}"```
+in the URL user would be the user assigned from get-user
+  
+Example:
+```
+  startWebRequest("https://codeorg-api.com/server/set-username{"+user+"}", function(content) {
+    other_username = content
+  });
+```
+in this example other_username is the variable that you set the output of set-username to that way you can do whatever you need with the other player's username
+</p>
+</details>
+
+<details><summary>set-ready</summary>
+  
+# set-ready
+  
+### takes 1 params, returns 1 JSON
+  
+<p>
+  
+The command that sets the property ready to true for specified user id, it takes one input which is the user from get-user, if there are no errors when it is called
+  it returns "set to ready"
+
+URL:
+```https://codeorg-api.com/server/set-ready{"+user+"}"```
+in the URL user would be the user assigned from get-user
+  
+Example:
+```
+  startWebRequest("https://codeorg-api.com/server/set-ready{"+user+"}", function(content) {
+    console.log("completed " + content);
+  });
+```
+</p>
+</details>
+
+<details><summary>get-ready</summary>
+  
+# get-ready
+  
+### takes 1 params, returns 1 JSON
+  
+<p>
+  
+get-ready is the command used to check if a certain user is ready, it takes one input which is the client user's input given from get-user, it then gets the opposit
+users ready status and returns that, for example if you are given P1 it would get P2's ready status and return either True or False
+
+URL:
+```https://codeorg-api.com/server/get-ready{"+user+"}"```
+in the example user would be the user assigned from get-user
+
+Example:
+```
+  startWebRequest("https://codeorg-api.com/server/get-ready{"+user+"}", function(content) {
+    other_ready = content
+    console.log("completed " + content);
+  });
+```
+in this example other_ready would be the variable defining if the opposite user is ready or not, then you can use it how you need
+</p>
+</details>
+
+Player Values
+-------------
+<details><summary>main_command</summary>
+# main_command
+  
+### takes 2 params, returns 1 JSON
+
+Unlike all the other commands in player settings player values doesn't have a set command, if there is no matching command then the server automatically assumes
+that you are trying to get/change player values, also unlike the other commands, in order to make server communication as fast as possible it is a get and post
+command all in one. You have two inputs consisting of your user, and a list containing the players x and y coordinates, then the output is the opposite players
+x and y, this makes it so rather than making a get and set request (like get-user and set-user or get-ready and set-ready) it can do it in one command, this
+is especially important as this command will (most likely) be used to update x and y of the opposite player (depending on use case of course) so by combining
+this into one command will decrease the time it takes to make one game loop, and in turn increase the frame rate.
+
+URL:
+```https://codeorg-api.com/server/{"+user+"}(x,y)"```
+in the example user would be the user assigned from get-user
+
+Example:
+```
+  var player_pos;
+  timedLoop(20, function(){
+    if(user == "P1"){
+      player_pos = "("+getXPosition("P1_img")+","+getYPosition("P1_img")+")";
+    }
+    else if(user == "P2"){
+      player_pos = "("+getXPosition("P2_img")+","+getYPosition("P2_img")+")";
+    }
+    startWebRequest("https://codeorg-api.com/server/{"+user+"}["+player_pos, function(content) {
+      if(user != "P1"){
+        setProperty("P2_img","x",parseInt(content.substring("[",",")));
+        setProperty("P2_img","y",parseInt(content.substring(",","]")));
+      }
+      else if(user == "P2"){
+        setProperty("P1_img","x",parseInt(content.substring("[",",")));
+        setProperty("P1_img","y",parseInt(content.substring(",","]")));
+      }
+    });
+    
+  });
+```
+in example this P1_img and P2_img are the elements representing each player, they don't have to be images, that's just what I decided to use.
+
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+If you are having issues, want something to be added, want something in the server to be changed (like player count), or anything else please contact me with:
+Email: tyler@spruillmail.com
+or
+Phone: (804) 647-5239
 
 License
 -------
