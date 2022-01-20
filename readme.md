@@ -1,4 +1,4 @@
-codeorg-apiㅤㅤㅤㅤㅤdocumentation
+codeorg-api documentation
 =================================
 ###### version 0.0.1
 <h5 style="color:#707070;">Please note API is not currently supported by code.org, and as such no api commands, or examples will work until hostname is approved</h5>
