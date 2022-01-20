@@ -16,8 +16,11 @@ Features
 Player Settings
 ---------------
 <details><summary>get-user</summary>
+  
 #### get-user
+  
 # takes 0 params, returns 1 JSON
+  
 <p>
   
 The first thing you need to do is get your user_id, you can do this using get-user which will return either P1, P2, or higher depending on the server size, which
