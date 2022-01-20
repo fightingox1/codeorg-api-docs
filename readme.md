@@ -20,9 +20,9 @@ Player Settings
 ---------------
 <details><summary>get-user</summary>
   
-# get-user
+  <h1>get-user</h1>
   
-### takes 0 params, returns 1 JSON
+  <h3>takes 0 params, returns 1 JSON</h3>
   
 <p>
   
@@ -31,15 +31,15 @@ is pre-set in the server's code, in order to get the server-size changed tempora
 will then return FULL.
 
 URL:
-```https://codeorg-api.com/server/get-user```
+  <code>https://codeorg-api.com/server/get-user</code>
 
 Example:
-```
+<code>
   startWebRequest("https://codeorg-api.com/server/get-user", function(content) {
     user = content;
     console.log("completed " + content);
   });
-```
+  </code>
 </p>
 </details>
 
