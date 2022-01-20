@@ -15,6 +15,8 @@ Features
 
 Player Settings
 ---------------
+<details><summary>get-user</summary>
+<p>
 
 The first thing you need to do is get your user_id, you can do this using get-user which will return either P1, P2, or higher depending on the server size, which
 is pre-set in the server's code, in order to get the server-size changed temporarily for your project contact support. If there are no users available get-user
@@ -30,6 +32,8 @@ Example:
     console.log("completed " + content);
   });
 ```
+</p>
+</details>
 
 Support
 -------
