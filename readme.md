@@ -24,23 +24,25 @@ Player Settings
   
   <h3>takes 0 params, returns 1 JSON</h3>
   
-<p>
-  
 The first thing you need to do is get your user_id, you can do this using get-user which will return either P1, P2, or higher depending on the server size, which
 is pre-set in the server's code, in order to get the server-size changed temporarily for your project contact support. If there are no users available get-user
 will then return FULL.
 
+<br>
+<br>
 URL:
-  <code>https://codeorg-api.com/server/get-user</code>
-
+<br>
+  <code style="bgcolor=#525252">https://codeorg-api.com/server/get-user</code>
+<br>
+<br>
 Example:
+<br>
 <code>
   startWebRequest("https://codeorg-api.com/server/get-user", function(content) {
     user = content;
     console.log("completed " + content);
   });
   </code>
-</p>
 </details>
 
 <details><summary>set-username</summary>
@@ -245,6 +247,8 @@ Support
 -------
 
 If you are having issues, want something to be added, want something in the server to be changed (like player count), or anything else please contact me with:
+
+
 Email: tyler@spruillmail.com
 
 
