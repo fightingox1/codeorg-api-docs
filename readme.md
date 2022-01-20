@@ -61,6 +61,7 @@ will output "set username"
 URL:
 <br>
   <code>https://codeorg-api.com/server/set-username{PLAYER}[USERNAME]</code>
+<br>
 in the url player would be the user assigned from get-user, for example P1. USERNAME would be the username that is being set, for example what a user would
 input in the display-name box.
 <br>
@@ -92,6 +93,7 @@ then contact support and we may be able to temporarily change the server propert
 URL:
 <br>
   <code>https://codeorg-api.com/server/set-username{"+user+"}"</code>
+<br>
 in the URL user would be the user assigned from get-user
 <br>
 <br>
@@ -102,6 +104,7 @@ Example:
     other_username = content
   });
  </code>
+ <br>
 in this example other_username is the variable that you set the output of set-username to that way you can do whatever you need with the other player's username
 </details>
 
@@ -114,11 +117,13 @@ in this example other_username is the variable that you set the output of set-us
   
 The command that sets the property ready to true for specified user id, it takes one input which is the user from get-user, if there are no errors when it is called
   it returns "set to ready"
+
 <br>
 <br>
 URL:
 <br>
   <code>https://codeorg-api.com/server/set-ready{"+user+"}"</code>
+<br>
 in the URL user would be the user assigned from get-user
 
 <br>
@@ -147,6 +152,7 @@ users ready status and returns that, for example if you are given P1 it would ge
 URL:
 <br>
   <code>https://codeorg-api.com/server/get-ready{"+user+"}"</code>
+<br>
 in the example user would be the user assigned from get-user
 <br>
 <br>
@@ -158,6 +164,7 @@ Example:
     console.log("completed " + content);
   });
   </code>
+<br>
 in this example other_ready would be the variable defining if the opposite user is ready or not, then you can use it how you need
 </details>
 
@@ -182,6 +189,7 @@ this into one command will decrease the time it takes to make one game loop, and
 URL:
 <br>
   <code>https://codeorg-api.com/server/{"+user+"}(x,y)"</code>
+<br>
 in the example user would be the user assigned from get-user
 <br>
 <br>
@@ -209,6 +217,7 @@ Example:
     
   });
 </code>
+<br>
 in example this P1_img and P2_img are the elements representing each player, they don't have to be images, that's just what I decided to use.
 </details>
  
