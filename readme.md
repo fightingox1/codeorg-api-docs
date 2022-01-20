@@ -149,10 +149,12 @@ in this example other_ready would be the variable defining if the opposite user 
 Player Values
 -------------
 <details><summary>main_command</summary>
+
 # main_command
   
 ### takes 2 params, returns 1 JSON
 
+<p>
 Unlike all the other commands in player settings player values doesn't have a set command, if there is no matching command then the server automatically assumes
 that you are trying to get/change player values, also unlike the other commands, in order to make server communication as fast as possible it is a get and post
 command all in one. You have two inputs consisting of your user, and a list containing the players x and y coordinates, then the output is the opposite players
@@ -188,7 +190,56 @@ Example:
   });
 ```
 in example this P1_img and P2_img are the elements representing each player, they don't have to be images, that's just what I decided to use.
+</p>
+</details>
+ 
+Other commands
+--------------
+<details><summary>reset</summary>
+  
+# reset
+  
+### takes 0 params, returns 1 JSON
+  
+<p>
+  
+Command use to reset all data to defaults
 
+URL:
+```https://codeorg-api.com/server/reset```
+
+Example:
+```
+  startWebRequest("https://codeorg-api.com/server/reset", function(content) {
+    console.log("completed " + content);
+  });
+```
+</p>
+</details>
+
+<details><summary>test</summary>
+  
+# test
+  
+### takes 0 params, returns 1 JSON
+  
+<p>
+  
+Just a command to check that the server is running, and that getting data is working, and all that, returns "Hello world!" on run
+
+URL:
+```https://codeorg-api.com/test```
+
+Example:
+```
+  startWebRequest("https://codeorg-api.com/test", function(content) {
+    console.log("completed " + content);
+  });
+```
+</p>
+</details>
+
+ 
 Support
 -------
 
