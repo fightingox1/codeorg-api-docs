@@ -245,8 +245,29 @@ Support
 
 If you are having issues, want something to be added, want something in the server to be changed (like player count), or anything else please contact me with:
 Email: tyler@spruillmail.com
-or
+
+
 Phone: (804) 647-5239
+
+
+Discord: fightingox#9443
+
+Planned Updates
+---------------
+- Server "Lobbies" so server doesn't have to be resetting, and multiple different programs can run at the same time without interferance
+- Unlimited player/object count, adding to array rather than storing as variables
+- Saving variables in database so even when server is refreshed previous data can still be accessed (for passwords and stuff like that)
+- Upgrading server (currently running server on repl.it planning on moving server to one of my old upgraded PC's with gigabit internet for faster speeds)
+- Making applab library to make understanding and using api even easier
+- adding security keys so people cant run server commands through web browser
+
+Extra Info
+----------
+
+Please let us know of any features that you guys want to be added, or if you need some parameter changed for your project please make us aware of that aswell.
+I made this API for a project I had and aside from messing around with the api and multiplayer sometimes I don't have much use for it, however I plan on
+keeping the servers running anyway to make it so other people can work multiplayer aswell in there projects. Along with that I don't even have many ideas for
+features to add, however I still want to (and plan on) continue to update this api frequently.
 
 License
 -------
