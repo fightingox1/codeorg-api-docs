@@ -1,4 +1,4 @@
-codeorg-api         documentation
+codeorg-apiㅤㅤㅤㅤㅤdocumentation
 =================================
 ###### version 0.0.1
 ##### Please note API is not currently supported by code.org, and as such no api commands, or examples will work until hostname is approved
@@ -306,4 +306,4 @@ features to add, however I still want to (and plan on) continue to update this a
 Credits
 -------
 
-###Made and hosted by Tyler Spruill
+<h3>Made and hosted by Tyler Spruill</h3>
