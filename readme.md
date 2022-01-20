@@ -1,6 +1,7 @@
 codeorg-api - documentation
 ===========================
 ###### version 0.0.1
+#### Please note API is not currently supported by code.org, and as such no api commands, or examples will work until hostname is approved
 
 codeorg-api is an API made specifically for use in code.org's applab, in order to connect two (or more) clients to one another through a server, 
 if you are interested in making any multiplayer or online functionality in applab you've come to the right place! With this documentation you can learn how to get codeorg-api working in your applab project in no time! If you would like to see a program using the codeorg-api you can look [here](https://studio.code.org/projects/applab/yBNFOu6mZku55fLM-Knyw7RjCfnahbN7UVAXi2vt398).
