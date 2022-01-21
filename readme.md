@@ -288,11 +288,11 @@ Discord: fightingox#9443
 Planned Updates
 ---------------
 - Server "Lobbies" so server doesn't have to be reset, and multiple different programs can run at the same time without interferance
-- Unlimited player/object count, adding to array rather than storing as variables
+- Unlimited player/object count (until server ram runds out), by adding to array rather than storing as variables
 - Saving variables in database so even when server is refreshed previous data can still be accessed (for passwords, progress, and all variables that need to be saved)
 - Upgrading to a server with more computing power, ram, storage, and faster internet
 - Making app lab library to simplify commands
-- adding security keys so people cant run server commands through web browser
+- adding security keys so people can't run server commands through web browser
 
 Extra Info
 ----------
