@@ -187,7 +187,7 @@ this into one command will decrease the time it takes to make one game loop, and
 <br>
 URL:
 <br>
-  <code>https://codeorg-api.com/server/{"+user+"}(x,y)"</code>
+  <code>https://codeorg-api.com/main/{"+user+"}(x,y)"</code>
 <br>
 in the URL user would be the user id assigned from get-user
 <br>
@@ -203,7 +203,7 @@ Example:
     else if(user == "P2"){
       player_pos = "("+getXPosition("P2_img")+","+getYPosition("P2_img")+")";
     }
-    startWebRequest("https://codeorg-api.com/server/{"+user+"}["+player_pos, function(content) {
+    startWebRequest("https://codeorg-api.com/main/{"+user+"}["+player_pos, function(content) {
       if(user != "P1"){
         setProperty("P2_img","x",parseInt(content.substring("[",",")));
         setProperty("P2_img","y",parseInt(content.substring(",","]")));
